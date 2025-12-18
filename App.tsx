@@ -149,42 +149,24 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      {/* BLOCO 2: CONTEXTO E PROBLEMA */}
+      {/* BLOCO 2: CONTEXTO E PROBLEMA (Reduzido e sem imagem) */}
       <Section className="bg-white">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-celestial-blue">
-              2026 Sem Máscaras: O Mundo Está Sacudindo?
-            </h2>
-            <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-              <p>
-                <strong className="text-slate-800">Você sente que sua energia está sendo drenada?</strong> Estamos vivendo um momento único na Transição Planetária. Como eu sempre digo: <em className="italic text-emerald-600 font-semibold">"Apertem os cintos"</em>.
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-celestial-blue">
+            2026: O Mundo Está Sacudindo?
+          </h2>
+          <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+            <p>
+              Estamos vivendo um momento único na Transição Planetária. A luz está chegando com força total, trazendo à tona tudo o que estava escondido. A verdade é que muitas vezes culpamos o externo, mas <strong>você é o responsável pela porta que abre.</strong>
+            </p>
+            
+            <div className="bg-red-50 border border-red-100 p-8 rounded-2xl shadow-sm">
+              <p className="font-bold text-red-900 text-xl mb-2">
+                Cuidado com o "Obsessor de Si Mesmo"
               </p>
-              <p>
-                A luz está chegando com força total, e isso significa que tudo o que estava escondido na sombra está vindo à tona — tanto no mundo quanto dentro de nós.
+              <p className="text-red-800">
+                Se você não sabe blindar o seu campo e equilibrar suas emoções, você acaba se sabotando. Chega de terceirizar sua proteção. É hora de ter uma ferramenta cirúrgica para navegar esses tempos com autonomia.
               </p>
-              <p>
-                Muitas vezes, culpamos o "obsessor", o vizinho ou a família pelo caos em nossa vida. Mas a verdade espiritual dura (e libertadora) é: <strong>você é o responsável pela porta que abre.</strong>
-              </p>
-              <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
-                <p className="font-semibold text-red-900">
-                  Se você não sabe blindar o seu campo, se você não sabe limpar a sua casa e equilibrar suas emoções, você acaba sendo "obsessor de si mesmo".
-                </p>
-              </div>
-              <p>
-                Chega de terceirizar sua proteção. Chega de viver na montanha-russa emocional. É hora de você ter em mãos uma ferramenta <strong>cirúrgica</strong> para navegar esses tempos com autonomia.
-              </p>
-            </div>
-          </div>
-          <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl">
-            {/* Placeholder for "Chaos/Storm to Light" abstract image */}
-            <img 
-              src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=2000&auto=format&fit=crop" 
-              alt="Transição Planetária" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-celestial-blue/60 to-transparent flex items-end p-8">
-              <p className="text-white font-bold text-xl">"A espiritualidade verdadeira se prova no dia a dia."</p>
             </div>
           </div>
         </div>
@@ -239,7 +221,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* BLOCO 4: AS EGRÉGORAS */}
-      <Section className="bg-slate-50">
+      <Section className="bg-white">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-slate-900 mb-4">
             Você nunca estará trabalhando sozinho(a)
@@ -284,13 +266,17 @@ const App: React.FC = () => {
               icon: <Globe className="w-8 h-8 text-purple-500" />
             },
           ].map((card, idx) => (
-            <div key={idx} className={`bg-white p-6 rounded-xl shadow-lg border-t-4 ${card.color} hover:-translate-y-2 transition-transform duration-300`}>
-              <div className={`w-14 h-14 ${card.bg} rounded-full flex items-center justify-center mb-4`}>
-                {card.icon}
+            <div key={idx} className={`${card.bg} p-6 rounded-xl shadow-lg border-t-4 ${card.color} hover:-translate-y-2 transition-transform duration-300`}>
+              <div className="flex flex-row items-center md:flex-col md:items-start gap-4 md:gap-0 mb-3 md:mb-0">
+                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-0 md:mb-4 flex-shrink-0 shadow-sm">
+                  {card.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-xl text-slate-900 mb-1">{card.title}</h3>
+                  <p className="text-xs uppercase tracking-wider font-semibold text-slate-600 mb-1 md:mb-3">{card.sub}</p>
+                </div>
               </div>
-              <h3 className="font-bold text-xl text-slate-900 mb-1">{card.title}</h3>
-              <p className="text-xs uppercase tracking-wider font-semibold text-slate-500 mb-3">{card.sub}</p>
-              <p className="text-slate-600 text-sm leading-relaxed">{card.desc}</p>
+              <p className="text-slate-700 text-sm leading-relaxed mt-1 md:mt-0">{card.desc}</p>
             </div>
           ))}
         </div>
@@ -477,23 +463,23 @@ const App: React.FC = () => {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className="border border-slate-100 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 bg-white"
+                className="border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-400 bg-white"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-4 text-left focus:outline-none hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 text-left focus:outline-none bg-slate-100 hover:bg-slate-200 transition-colors"
                 >
-                  <span className="font-medium text-slate-700 text-base pr-4">
+                  <span className="font-medium text-slate-800 text-base pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`w-4 h-4 text-emerald-500 transition-transform duration-300 flex-shrink-0 opacity-70 ${openFaqIndex === index ? 'rotate-180' : ''}`} 
+                    className={`w-4 h-4 text-emerald-600 transition-transform duration-300 flex-shrink-0 opacity-70 ${openFaqIndex === index ? 'rotate-180' : ''}`} 
                   />
                 </button>
                 <div 
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaqIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="p-4 pt-0 text-slate-600 text-sm leading-relaxed">
+                  <div className="p-4 pt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-200 bg-white">
                     {faq.answer}
                   </div>
                 </div>
@@ -524,10 +510,6 @@ const App: React.FC = () => {
           </div>
 
           <div className="border-t border-slate-800 pt-8 space-y-8">
-            <p className="text-xl font-serif text-white italic">
-              "Sempre vai existir uma versão sua que está pronta para aparecer, desde que você pare de fingir ser outra coisa."
-            </p>
-            
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
               <p>Copyright © 2026 Cíntia Camerin. Todos os direitos reservados.</p>
               <a 
