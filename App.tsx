@@ -113,13 +113,22 @@ const App: React.FC = () => {
             <span className="text-gold-accent font-semibold uppercase tracking-wider text-sm">Formação 2026</span>
           </div>
           
-          {/* Foto Cintia Camerin (Hero) */}
-          <div className="mb-6 flex justify-center">
-             <img 
-               src="https://cintia.marketsite.com.br/2.jpg" 
-               alt="Cíntia Camerin" 
-               className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-4 border-white/30 shadow-2xl"
-             />
+          {/* Foto Cintia Camerin (Hero) - Aumentada e com efeito de fusão */}
+          <div className="mb-8 flex justify-center relative">
+             <div className="relative group">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-celestial-blue/50 blur-[50px] rounded-full scale-110"></div>
+                
+                <img 
+                  src="https://cintia.marketsite.com.br/2.jpg" 
+                  alt="Cíntia Camerin" 
+                  className="w-48 h-48 md:w-72 md:h-72 rounded-full object-cover shadow-2xl relative z-10"
+                  style={{ 
+                    maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
+                  }}
+                />
+             </div>
           </div>
 
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
@@ -130,7 +139,8 @@ const App: React.FC = () => {
             Uma formação inédita e ao vivo com <strong className="text-white">Cíntia Camerin</strong> para você aprender a diagnosticar, limpar e harmonizar sua energia com a ferramenta canalizada diretamente das Egrégoras de Luz.
           </p>
           
-          <div className="pt-8">
+          {/* Botão com maior espaçamento inferior */}
+          <div className="pt-10 pb-24">
             <Button onClick={handleCheckout} className="mx-auto text-xl shadow-gold-accent/20 shadow-2xl animate-pulse">
               QUERO GARANTIR MINHA VAGA NA MESA CELESTIAL
               <ChevronRight className="w-6 h-6" />
@@ -314,11 +324,11 @@ const App: React.FC = () => {
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 relative">
              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold-accent/20 rounded-full blur-xl"></div>
              <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
-               {/* Replace with Cintia's actual image */}
+               {/* Foto da Bio Aumentada - AJUSTADA AQUI */}
                <img 
                  src="https://cintia.marketsite.com.br/1.jpg" 
                  alt="Cíntia Camerin"
-                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white shadow-xl flex-shrink-0"
+                 className="w-56 h-56 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-xl flex-shrink-0"
                />
                <div>
                  <h3 className="font-serif text-2xl font-bold text-slate-900">Cíntia Camerin</h3>
@@ -430,9 +440,9 @@ const App: React.FC = () => {
                 <p className="text-slate-400 line-through text-lg">De R$ 2.997,00</p>
                 <div className="flex flex-col items-center">
                   <span className="text-lg text-slate-600 font-medium">Por apenas</span>
-                  <div className="flex items-baseline gap-1 text-emerald-600">
-                    <span className="text-3xl font-bold">12x de</span>
-                    <span className="text-5xl md:text-6xl font-bold tracking-tight">R$ 206,54</span>
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-emerald-600">
+                    <span className="text-2xl md:text-3xl font-bold">12x de</span>
+                    <span className="text-4xl md:text-6xl font-bold tracking-tight">R$ 206,54</span>
                   </div>
                   <p className="text-slate-500 text-sm mt-2">ou R$ 1.997,00 à vista</p>
                 </div>
@@ -453,37 +463,37 @@ const App: React.FC = () => {
 
       {/* BLOCO: FAQ (Perguntas Frequentes) */}
       <Section className="bg-white">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl font-bold text-slate-900 mb-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-slate-900 mb-3">
               Perguntas Frequentes
             </h2>
-            <p className="text-slate-600">
+            <p className="text-slate-500 text-sm">
               Tire suas dúvidas sobre a formação e a metodologia.
             </p>
           </div>
 
-          <div className="space-y-4 mb-16">
+          <div className="space-y-3 mb-12">
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className="border border-slate-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md bg-slate-50"
+                className="border border-slate-100 rounded-lg overflow-hidden transition-all duration-300 hover:border-slate-300 bg-white"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none bg-white"
+                  className="w-full flex items-center justify-between p-4 text-left focus:outline-none hover:bg-slate-50 transition-colors"
                 >
-                  <span className="font-bold text-slate-800 text-lg pr-4">
+                  <span className="font-medium text-slate-700 text-base pr-4">
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`w-6 h-6 text-emerald-600 transition-transform duration-300 flex-shrink-0 ${openFaqIndex === index ? 'rotate-180' : ''}`} 
+                    className={`w-4 h-4 text-emerald-500 transition-transform duration-300 flex-shrink-0 opacity-70 ${openFaqIndex === index ? 'rotate-180' : ''}`} 
                   />
                 </button>
                 <div 
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${openFaqIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
+                  <div className="p-4 pt-0 text-slate-600 text-sm leading-relaxed">
                     {faq.answer}
                   </div>
                 </div>
@@ -500,7 +510,7 @@ const App: React.FC = () => {
       </Section>
 
       {/* BLOCO 9: GARANTIA & FOOTER */}
-      <footer className="bg-slate-900 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+      <footer className="bg-slate-900 text-slate-400 pt-16 pb-32 md:pb-8 border-t border-slate-800">
         <div className="max-w-4xl mx-auto px-6 text-center">
           
           <div className="mb-16">
