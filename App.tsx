@@ -237,9 +237,10 @@ const App: React.FC = () => {
               title: "Arcanjo Miguel", 
               sub: "Comando Micaélico",
               desc: "Para proteção absoluta, corte de laços negativos e a força da fé.",
-              color: "border-blue-600",
-              bg: "bg-blue-50",
-              icon: <Shield className="w-8 h-8 text-blue-600" />
+              color: "border-blue-700",
+              bg: "bg-gradient-to-br from-blue-100 via-blue-50 to-white",
+              icon: <Shield className="w-8 h-8 text-blue-700" />,
+              featured: true
             },
             { 
               title: "Hierarquias Angelicais", 
@@ -258,7 +259,7 @@ const App: React.FC = () => {
               icon: <Star className="w-8 h-8 text-gold-accent" />
             },
             { 
-              title: "Federação Galáctica", 
+              title: "Federação Galáctica da Luz", 
               sub: "Suporte Benevolente",
               desc: "O suporte de seres que auxiliam na transição da Terra.",
               color: "border-purple-500",
@@ -266,17 +267,25 @@ const App: React.FC = () => {
               icon: <Globe className="w-8 h-8 text-purple-500" />
             },
           ].map((card, idx) => (
-            <div key={idx} className={`${card.bg} p-6 rounded-xl shadow-lg border-t-4 ${card.color} hover:-translate-y-2 transition-transform duration-300`}>
-              <div className="flex flex-row items-center md:flex-col md:items-start gap-4 md:gap-0 mb-3 md:mb-0">
-                <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mb-0 md:mb-4 flex-shrink-0 shadow-sm">
+            <div key={idx} className={`${card.bg} p-6 rounded-xl shadow-lg border-t-4 ${card.color} hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group ${card.featured ? 'shadow-blue-900/10 ring-1 ring-blue-200 md:-translate-y-2' : ''}`}>
+              
+              {/* Background Icon for Featured Cards */}
+              {card.featured && (
+                <div className="absolute -right-8 -bottom-8 opacity-5 transition-transform duration-500 group-hover:scale-110 group-hover:opacity-10 pointer-events-none">
+                   <Shield className="w-48 h-48 text-blue-900" />
+                </div>
+              )}
+
+              <div className="flex flex-row items-center md:flex-col md:items-start gap-4 md:gap-0 mb-3 md:mb-0 relative z-10">
+                <div className={`w-14 h-14 bg-white rounded-full flex items-center justify-center mb-0 md:mb-4 flex-shrink-0 shadow-sm ${card.featured ? 'ring-2 ring-blue-100' : ''}`}>
                   {card.icon}
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl text-slate-900 mb-1">{card.title}</h3>
+                  <h3 className={`font-bold text-xl mb-1 ${card.featured ? 'text-blue-900' : 'text-slate-900'}`}>{card.title}</h3>
                   <p className="text-xs uppercase tracking-wider font-semibold text-slate-600 mb-1 md:mb-3">{card.sub}</p>
                 </div>
               </div>
-              <p className="text-slate-700 text-sm leading-relaxed mt-1 md:mt-0">{card.desc}</p>
+              <p className="text-slate-700 text-sm leading-relaxed mt-1 md:mt-0 relative z-10">{card.desc}</p>
             </div>
           ))}
         </div>
