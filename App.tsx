@@ -110,7 +110,7 @@ const App: React.FC = () => {
           
           {/* Badge */}
           <div className="inline-block bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full border border-white/20 mb-6 animate-fade-in-up">
-            <span className="text-gold-accent font-semibold uppercase tracking-wider text-sm">Formação 2026</span>
+            <span className="text-gold-accent font-semibold uppercase tracking-wider text-sm">Curso da Mesa Quântica Celestial</span>
           </div>
           
           {/* Foto Cintia Camerin (Hero) - Aumentada e com efeito de fusão */}

@@ -37,7 +37,7 @@ const ShortApp: React.FC = () => {
         
         <div className="relative z-10 max-w-3xl mx-auto text-center text-white">
           <div className="inline-block bg-gold-accent/20 border border-gold-accent/40 rounded-full px-4 py-1 mb-6">
-            <span className="text-gold-accent text-xs font-bold uppercase tracking-wider">Formação Oficial 2026</span>
+            <span className="text-gold-accent text-xs font-bold uppercase tracking-wider">Curso da Mesa Quântica Celestial</span>
           </div>
           
           <h1 className="font-serif text-3xl md:text-5xl font-bold mb-6 leading-tight">
