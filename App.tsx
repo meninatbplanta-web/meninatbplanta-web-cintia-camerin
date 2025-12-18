@@ -242,12 +242,12 @@ const App: React.FC = () => {
               icon: <Shield className="w-8 h-8 text-blue-600" />
             },
             { 
-              title: "Comando Esmeralda", 
-              sub: "Cura Intergaláctica",
-              desc: "Ligada ao Arcanjo Rafael, para regeneração física e do DNA.",
-              color: "border-emerald-500",
-              bg: "bg-emerald-50",
-              icon: <Zap className="w-8 h-8 text-emerald-500" />
+              title: "Hierarquias Angelicais", 
+              sub: "Anjos e Arcangelinas",
+              desc: "A doçura e a força das legiões celestiais para amparo e elevação espiritual.",
+              color: "border-rose-400",
+              bg: "bg-rose-50",
+              icon: <Users className="w-8 h-8 text-rose-400" />
             },
             { 
               title: "Fraternidade Branca", 
